@@ -1,0 +1,7 @@
+carroçel de imagens 
+
+foto (passar o rato por cima do nome e mostrar ft)
+nomes
+caixa de texto para frase 
+contactos
+butao copia de contactos 
