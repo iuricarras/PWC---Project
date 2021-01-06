@@ -1,0 +1,40 @@
+.navbar-fixed-top {
+    margin-bottom: 0;
+    background-color: black;
+    z-index: 9999;
+    border: 30px;
+    border-color: yellow;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0px;
+    border-radius: 15px;
+}
+.navbar-header img{
+    height: 100 px;
+    width: 100px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.navbar-header .navbar-title{
+    color: yellow;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.navbar-brand{
+    font: larger;
+    color: yellow;
+}
+
+.navbar-buttons{
+    background-color: yellow;
+    color: black;
+    font-size: 25px;
+    text-align: right;
+    word-break: normal;
+    word-spacing: 15px;
+    border-radius: 15px;
+}
+.navbar-buttons .a{
+    color: yellow;
+}
