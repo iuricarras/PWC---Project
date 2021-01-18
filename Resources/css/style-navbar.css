@@ -1,0 +1,68 @@
+/*.text-center button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    background-color: yellow;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    width: 20%;
+    height: 50%;
+  }
+  
+  .text-center button:hover {background-color: gold}
+  
+  .text-center button:active {
+    background-color: dark-gold;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }*/
+  .CollapsButtons button {
+    position: relative;
+    background-color: rgba(18, 4, 139, 0.877);
+    border-radius: 8px;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    width: 20%;
+    list-style-type: none;
+  }
+
+  .CollapsButtons button:focus{
+
+      outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+  }
+  
+  .CollapsButtons button:after {
+    content: "";
+    background: rgb(90, 127, 228);
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  .CollapsButtons button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
