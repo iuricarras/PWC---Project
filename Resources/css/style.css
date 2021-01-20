@@ -1,4 +1,4 @@
-.navbar-fixed-top {
+.navbar {
     margin-bottom: 0;
     background-color: black;
     z-index: 9999;
@@ -9,6 +9,7 @@
     letter-spacing: 0px;
     border-radius: 15px;
 }
+
 .navbar-header img{
     height: 100 px;
     width: 100px;
@@ -22,19 +23,24 @@
 }
 
 .navbar-brand{
-    font: larger;
-    color: yellow;
+    font-style:S
+    color:  #fbe122;
 }
 
 .navbar-buttons{
-    background-color: yellow;
-    color: black;
+    background-color: #40c1ac;
+    
     font-size: 25px;
-    text-align: right;
+    text-align: center;
     word-break: normal;
-    word-spacing: 15px;
-    border-radius: 15px;
+    word-spacing: 100px;
+    border-radius: 0px;
+    height: 35px;
+
+    
+    
 }
 .navbar-buttons .a{
-    color: yellow;
+    color: red;
 }
+*/
