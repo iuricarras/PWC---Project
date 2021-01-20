@@ -1,24 +1,23 @@
 .navbar-fixed-top {
+    height: auto;
+    width: auto;
     margin-bottom: 0;
     background-color: black;
     z-index: 9999;
-    border: 30px;
-    border-color: yellow;
-    font-size: 12px !important;
-    line-height: 1.5 !important;
+    font-size: 12px;
+    line-height: 1.5;
     letter-spacing: 0px;
-    border-radius: 15px;
+    border-radius: 0px;
 }
 .navbar-header img{
-    height: 100 px;
-    width: 100px;
-    margin-left: 5px;
-    margin-top: 5px;
+    height: 10%;
+    width: 10%;
 }
 .navbar-header .navbar-title{
+    margin-left: auto;
+    margin-right: auto;
     color: yellow;
     font-size: 30px;
-    margin-left: 10px;
 }
 
 .navbar-brand{
@@ -27,14 +26,23 @@
 }
 
 .navbar-buttons{
+    height: auto;
+    width: auto;
+    margin-top: 100px;
     background-color: yellow;
     color: black;
     font-size: 25px;
     text-align: right;
-    word-break: normal;
-    word-spacing: 15px;
-    border-radius: 15px;
+    border-radius: 8px;
 }
 .navbar-buttons .a{
+    
     color: yellow;
+}
+.container{
+    margin: 0%;
+    padding: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
 }
