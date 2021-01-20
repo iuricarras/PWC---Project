@@ -49,8 +49,11 @@
                   <div class="text-center">
                     <img src="Resources/images/iconR2D2.png" style="height: 12%; width: 12%; margin-right: right;">
                     <h1>Home Page</h1>
-                    <input type="text" placeholder="Search here you do..." style="width: 30%;">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <span id="error"></span>
+                    <form action="pesquisa.html" id="formNome" method="POST">
+                    	<input type="text" id="nome" name="pesquisa" placeholder="Search here you do..." style="width: 30%;">
+                    	<button type="submit" id="btSearch"><i class="fa fa-search"></i></button>
+                    </form>
                   </div>
                 </nav>
               </div>
@@ -120,17 +123,5 @@
         </a>
     </div>
 </div>
-<script>
-    $(document).ready(function() {
-        $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=test&api_key=4a9f5581a9cdf20a699f540ac52a95c9&limit=10&format=json&callback=?", function(json) {
-            var html = '';
-            $.each(json.topartists.artist, function(i, item) {
-                html += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
-            });
-            $('#result').append(html);
-        });
-    });
-    </script>
-    <div id="result"></div>
-
+    <script type="text/javascript" src="Resources/js/javascript.js"></script>
 </body>
