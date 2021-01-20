@@ -1,1 +1,3 @@
-Home - Criação da Navbar com Bootstrap + criação de css em separado para a navbar
+18/01/2021 - Home - Criação da Navbar com Bootstrap + criação de css em separado para a navbar
+
+20/01/2021 - Alteração dos links de Bootstrap
