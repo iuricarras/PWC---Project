@@ -1,48 +1,46 @@
-.navbar-fixed-top {
-    height: auto;
-    width: auto;
+.navbar {
     margin-bottom: 0;
     background-color: black;
     z-index: 9999;
-    font-size: 12px;
-    line-height: 1.5;
+    border: 30px;
+    border-color: yellow;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
     letter-spacing: 0px;
-    border-radius: 0px;
+    border-radius: 15px;
 }
+
 .navbar-header img{
-    height: 10%;
-    width: 10%;
+    height: 100 px;
+    width: 100px;
+    margin-left: 5px;
+    margin-top: 5px;
 }
 .navbar-header .navbar-title{
-    margin-left: auto;
-    margin-right: auto;
     color: yellow;
     font-size: 30px;
+    margin-left: 10px;
 }
 
 .navbar-brand{
-    font: larger;
-    color: yellow;
+    font-style:S
+    color:  #fbe122;
 }
 
 .navbar-buttons{
-    height: auto;
-    width: auto;
-    margin-top: 100px;
-    background-color: yellow;
-    color: black;
+    background-color: #40c1ac;
+    
     font-size: 25px;
-    text-align: right;
-    border-radius: 8px;
+    text-align: center;
+    word-break: normal;
+    word-spacing: 100px;
+    border-radius: 0px;
+    height: 35px;
+
+    
+    
 }
 .navbar-buttons .a{
-    
-    color: yellow;
+    color: red;
 }
-.container{
-    margin: 0%;
-    padding: 0%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 3px;
-}
+*/
