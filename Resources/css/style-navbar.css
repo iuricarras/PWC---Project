@@ -22,6 +22,24 @@
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }*/
+  .CollapsButtons button {
+    position: relative;
+    background-color: rgba(18, 4, 139, 0.877);
+    border-radius: 8px;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    width: 20%;
+    list-style-type: none;
+  }
+  
   .CollapsButtons button:focus{
 
       outline: thin dotted;
