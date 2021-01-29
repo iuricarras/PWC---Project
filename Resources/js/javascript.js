@@ -51,14 +51,15 @@ $(function () {
 					
 
 					var liMedia=cloneMedia.clone();
-					
+                    $('#mdetalhes').attr("id","mdetalhes" + i);
+                    $('#adetalhes').attr("id","adetalhes" + i);
 					$('.title', liMedia).html(data.results.trackmatches.track[i].name);
 					$('.artist', liMedia).html(data.results.trackmatches.track[i].artist);
 					$('.media-list').append(liMedia);
 
-					/*console.log('data');
+					console.log('data');
 					console.log(data);
-					console.log(data.results.trackmatches.track[i].name);*/
+					console.log(data.results.trackmatches.track[i].name);
 
 				}
 			});
@@ -97,38 +98,62 @@ $(function () {
 
 })
 
-$(function () {
-        
-        if (typeof(Storage) !== "undefined") {
+ $( document ).ready(function () {
+        console.log("Work...Please");
+        /*if (typeof(Storage) !== "undefined") {
             $("#mdetalhes").val(localStorage.detalhes)
         } else {
         // Acção ou aviso para o não suporte de persistência de dados
             $("#error").text( "Not valid!" ).show().fadeOut( 1000 );
             event.preventDefault();
-        }
-        $( "#formdetalhes" ).submit(function( event ) {
+        }*/
+        $(document).on("click", ".title", function(event){
+            
+            console.log("hello");
+            
+        
             if (typeof(Storage) !== "undefined") {
             // Código com implementação do localStorage/sessionStorage.                
-            console.log("hello");
+            var bid = $(this).attr('id');
+            var lastChar = bid.substr(bid.length - 1);
             console.log("Why am i here, again?");
-            var nomedetalhes = document.getElementByID("mdetalhes");
+            var nomedetalhes = document.getElementById(bid);
+            var artistdetalhes = document.getElementById("adetalhes" + lastChar);
             console.log(nomedetalhes);
-            localStorage.setItem("detalhes", nomedetalhes.value);
+            localStorage.setItem("nomedetalhes", nomedetalhes.innerHTML);
+            localStorage.setItem("artistadetalhes", artistdetalhes.innerHTML);
+
             return;
             
             } else {
-            // Acção ou aviso para o não suporte de persistência de dados
+            // Acção ou aviso para o não suporte de persistência de dadosd
                 $( "#error" ).text( "Not valid!" ).show().fadeOut( 1000 );
                 console.log("Why am i here?");
                 event.preventDefault();
             }
-
         });
+
+    
      if ( $("body#detalhes").length > 0 ){
 
             console.log("Estou aqui");
-            var resultadodetalhes = localStorage.detalhes;
-            console.log(resultadodetalhes);
+            var resultadonomedetalhes = localStorage.nomedetalhes;
+            var resultadoartistadetalhes = localStorage.artistadetalhes;
+
+            $.ajax({
+                type : 'POST',
+                url : 'http://ws.audioscrobbler.com/2.0/',
+                data : 'method=track.getInfo&' +
+                        'api_key=57ee3318536b23ee81d6b27e36997cde&' +
+                        'artist=' + resultadoartistadetalhes + '&' +
+                        'track=' + resultadonomedetalhes + '&' +
+                        'format=json',
+                dataType : 'jsonp',
+                success : function(data) {
+                
+                console.log(data);
+            }
+        });
         }
 
 }); 

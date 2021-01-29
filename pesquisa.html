@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <title>Pesquisa - Projecto de PWC</title>
     <link rel="icon" type="image/img" href="Resources/images/iconR2D2.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -96,11 +96,9 @@
             <ul class="media-list">
                 <li class="media">
                     <div class="media-body">
-                        <form action="detalhes.html" id="formdetalhes" method="POST">
-                            <button type="submit" class="title media-heading" id="mdetalhes"></button>
-                        </form>
+                            <a class="btn btn-primary title media-heading" href="detalhes.html"  id="mdetalhes" role="button">Link</a>
                             <p>
-                                <span class="artist"></span>
+                                <span class="artist" id="adetalhes"></span>
                             </p>        
                     </div>
                 </li>
