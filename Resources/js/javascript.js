@@ -27,7 +27,7 @@ $(function () {
 
 	} else if ( $("body#pesquisa").length > 0 ){
 	
-	console.log('to qui');
+	/*console.log('to qui');*/
 	var cloneMedia = $('.media').clone();
 
 	var valuePesquisa = localStorage.nome;
@@ -36,7 +36,7 @@ $(function () {
 	$('.media-list').html('');
 
 	$.ajax({
-        	type : 'POST',
+        	type : 'GET',
         	url : 'http://ws.audioscrobbler.com/2.0/',
         	data : 'method=track.search&' +
     				'track=' + valuePesquisa +'&' +
@@ -56,9 +56,9 @@ $(function () {
 					$('.artist', liMedia).html(data.results.trackmatches.track[i].artist);
 					$('.media-list').append(liMedia);
 
-					console.log('data');
+					/*console.log('data');
 					console.log(data);
-					console.log(data.results.trackmatches.track[i].name);
+					console.log(data.results.trackmatches.track[i].name);*/
 
 				}
 			});
@@ -89,10 +89,47 @@ $(function () {
                     $('.artist' + i, liMedia).html(data.tracks.track[i].artist.name);
                     $('.music'+ i).append(liMedia);
 
-                    console.log('data');
-                    console.log(data);
+                    /*console.log('data');
+                    console.log(data);*/
             }
         }
     });
 
 })
+
+$(function () {
+        
+        if (typeof(Storage) !== "undefined") {
+            $("#mdetalhes").val(localStorage.detalhes)
+        } else {
+        // Acção ou aviso para o não suporte de persistência de dados
+            $("#error").text( "Not valid!" ).show().fadeOut( 1000 );
+            event.preventDefault();
+        }
+        $( "#formdetalhes" ).submit(function( event ) {
+            if (typeof(Storage) !== "undefined") {
+            // Código com implementação do localStorage/sessionStorage.                
+            console.log("hello");
+            console.log("Why am i here, again?");
+            var nomedetalhes = document.getElementByID("mdetalhes");
+            console.log(nomedetalhes);
+            localStorage.setItem("detalhes", nomedetalhes.value);
+            return;
+            
+            } else {
+            // Acção ou aviso para o não suporte de persistência de dados
+                $( "#error" ).text( "Not valid!" ).show().fadeOut( 1000 );
+                console.log("Why am i here?");
+                event.preventDefault();
+            }
+
+        });
+     if ( $("body#detalhes").length > 0 ){
+
+            console.log("Estou aqui");
+            var resultadodetalhes = localStorage.detalhes;
+            console.log(resultadodetalhes);
+        }
+
+}); 
+
