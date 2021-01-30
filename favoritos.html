@@ -45,7 +45,7 @@
                   </button>
                   <div class="text-center">
                     <img src="Resources/images/iconR2D2.png" style="height: 12%; width: 12%; margin-right: right;">
-                    <h1>Favoritos</h1>
+                    <h1 style="color: white;">Favoritos</h1>
                     <span id="error"></span>
                     <form action="pesquisa.html" id="formNome" method="POST">
                         <input type="text" id="nome" name="pesquisa" placeholder="Search here you do..." style="width: 30%;">
@@ -74,11 +74,16 @@
             <ul class="media-list">
                 <li class="media">
                     <div class="media-body">
-                            <a class="btn btn-primary title media-heading" href="detalhes.html"  id="mdetalhes" role="button">Link</a>
-                            <button type="button" class="btn btn-primary media-heading text-right removefav" id="removefavButton">Remove Fav</button>
-                            <p>
+                            <span style="font-size: 20px;">Musica - <a class="btn btn-primary title media-heading" href="detalhes.html"  id="mdetalhes" role="button" style="font-size: 20px;">Link</a></span>
+                            <p style="font-size: 20px;">
+                                <span>Artista - </span>
                                 <span class="artist" id="adetalhes"></span>
-                            </p>        
+                            </p>     
+                            <button type="button" class="btn btn-primary media-heading text-right removefav" id="removefavButton" style="font-size: 20px;">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"> Remover dos Favoritos</span>
+                            </button>  
+                            <p><br></p> 
+                            <p><br></p>  
                     </div>
                 </li>
             </ul>

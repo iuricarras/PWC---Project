@@ -32,7 +32,7 @@ $(function () {
 	var cloneMedia = $('.media').clone();
 
 	var valuePesquisa = localStorage.nome;
-	$('.panel-title').text('Search results for "'+ valuePesquisa+'"');
+	$('.panel-title').text('Resultado da Pesquisa - "'+ valuePesquisa+'"');
 
 	$('.media-list').html('');
 
