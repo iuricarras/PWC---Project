@@ -15,27 +15,24 @@
 
     <!--<link rel="stylesheet" href="Resources/css/style.css">-->
     <link rel="stylesheet" href="Resources/css/style-navbar.css">
+    <style>
+       .pos-f-t{
+         overflow: auto;
+        }
+    </style>
 </head>
-<body>
+<body id="favoritos" data-spy="scroll" data-target=".panel-body" data-offset="60">
     <nav class="navbar-fixed-top" style="background-color: rgb(82, 80, 80); border-radius: 5px;">
-        <!--<div class="container" style="background-color: black;"> -->
             <div class="pos-f-t">
                 <div class="collapse" id="navbarToggleExternalContent">
                   <div class="bg-dark p-4" style="background-color: #12048be0;"> 
                     <div class="CollapsButtons">
                         <div class="text-center">
-                            <button type="button">
-                                <li href="top10.html">Top10</li>
-                            </button>
-                            <button type="button">
-                                <li action="pesquisa.html">Pesquisa</li>
-                            </button>
-                            <button type="button">
-                                <li href="favoritos.html">Favoritos</li>
-                            </button>
-                            <button type="button">
-                                <li href="ajuda.html">Ajuda</li>
-                            </button>
+                                <a class="btn btn-primary" href="home.html" role="button">Home</a>
+
+                                <a class="btn btn-primary" href="pesquisa.html" role="button">Pesquisa</a>
+                            
+                                <a class="btn btn-primary" href="ajuda.html" role="button">Ajuda</a>
                             
                         </div>
                     </div>
@@ -56,6 +53,17 @@
                     </form>
                   </div>
                 </nav>
+            </div>
+    </nav>
+            <form class="favlist">
+                <div class="container">
+                    <div class="jumbotron" style="padding-top: 200px;">
+                        <div class="text-center">
+                            <h1></h1>      
+                            <p>Play the Music - Projecto de PWC</p>      
+                        </div>
+                     </div>     
+                  </div>
     <div class="panel panel-default" id="search">
         <div class="panel-heading">
             <h3 class="panel-title">Favoritos</h3>
@@ -77,5 +85,7 @@
         </div>
     </div>
      <script type="text/javascript" src="Resources/js/javascript.js"></script>
+    </div>
+    </form>
 </body>
 </html>

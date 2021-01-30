@@ -14,7 +14,6 @@
 
     <!--<link rel="stylesheet" href="Resources/css/style.css">-->
     <link rel="stylesheet" href="Resources/css/style-navbar.css">
-    <link rel="stylesheet" href="Resources/css/style-pesquisa.css">
     
 </head>
 <body id="pesquisa" class="container-fluid">
@@ -25,18 +24,11 @@
                   <div class="bg-dark p-4" style="background-color: #12048be0;"> 
                     <div class="CollapsButtons">
                         <div class="text-center">
-                            <button type="button">
-                                <li href="top10.html">Top10</li>
-                            </button>
-                            <button type="button">
-                                <li href="pesquisa.html">Pesquisa</li>
-                            </button>
-                            <button type="button">
-                                <li href="favoritos.html">Favoritos</li>
-                            </button>
-                            <button type="button">
-                                <li href="ajuda.html">Ajuda</li>
-                            </button>
+                                <a class="btn btn-primary" href="pesquisa.html" role="button">Pesquisa</a>
+
+                                <a class="btn btn-primary" href="favoritos.html" role="button">Favoritos</a>
+                            
+                                <a class="btn btn-primary" href="ajuda.html" role="button">Ajuda</a>
                             
                         </div>
                     </div>
@@ -86,6 +78,14 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="jumbotron" style="padding-top: 200px;">
+            <div class="text-center">
+                <h1></h1>      
+                <p>Play the Music - Projecto de PWC</p>      
+            </div>
+         </div>     
+      </div>
     <div class="panel panel-default" id="search">
         <div class="panel-heading">
             <h3 class="panel-title">Resultados de Pesquisa</h3>
@@ -97,7 +97,9 @@
                 <li class="media">
                     <div class="media-body">
                             <a class="btn btn-primary title media-heading" href="detalhes.html"  id="mdetalhes" role="button">Link</a>
-                            <button type="button" class="btn btn-primary media-heading text-right fav" id="favButton">Fav</button>
+                            <button type="button" class="btn btn-primary media-heading text-right fav" id="favButton">
+                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            </button>
                             <p>
                                 <span class="artist" id="adetalhes"></span>
                             </p>        
