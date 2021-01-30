@@ -31,17 +31,7 @@
         <!--<div class="container" style="background-color: black;"> -->
             <div class="pos-f-t">
                 <div class="collapse" id="navbarToggleExternalContent">
-                  <div class="bg-dark p-4"> 
-                    <div class="CollapsButtons" style="background-color: #12048be0; border-radius: 7px;">
-                        <div class="text-center" style="background-color: #12048be0;">
-                            
-                            <a class="btn btn-primary" href="top10.html" role="button">Top 10</a>
 
-                            <a class="btn btn-primary" href="pesquisa.html" role="button">Pesquisa</a>
-                            
-                            <a class="btn btn-primary" href="favoritos.html" role="button">Favoritos</a>
-
-                            <a class="btn btn-primary" href="favoritos.html" role="button">Ajuda</a>
                             
                         </div>
                     </div>
@@ -54,9 +44,7 @@
                   </button>
                   <div class="text-center">
                     <img src="Resources/images/iconR2D2.png" style="height: 12%; width: 12%; margin-right: right;">
-                    <h1 style="color:white;">Home Page</h1>
-                    <input type="text" placeholder="Search here you do..." style="width: 30%;">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+
                   </div>
                 </nav>
               </div>
@@ -95,64 +83,5 @@
                 <p>Play the Music - Projecto de PWC</p>      
             </div>
          </div>     
-    </div>
-    <div id="IMGCarousel" class="container-fluid text-center bg-grey">
-        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-               <!-- <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li> -->
-            </ol>
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active text-center">
-                    <img src="Resources/images/leia.jpg" width="450px" height="450px">
-                    <h4><span style="font-style:normal;">Princess Leia</span></h4>
-                </div>
-                <div class="item text-center">
-                    <img src="Resources/images/chew.jpg" width="450px" height="450px">
-                    <h4><span style="font-style:normal;">Chewbacca</span></h4>
-                </div>
-                <div class="item text-center">
-                    <img src="Resources/images/vader.jpg" width="450px" height="450px">
-                    <h4><span style="font-style:normal;">Darth Vader</span></h4>
-                </div>
-                <div class="item text-center">
-                    <img src="Resources/images/r2d2.jpg" width="450px" height="450px">
-                    <h4><span style="font-style:normal;">R2D2</span></h4>
-                </div>
-                <div class="item text-center">
-                    <img src="Resources/images/c2p0.jpg" width="450px" height="450px">
-                    <h4><span style="font-style:normal;">C3PO</span></h4>
-                </div>
-                <div class="item text-center">
-                    <img src="Resources/images/luke.jpg" width="450px" height="450px">
-                    <h4><span style="font-style:normal;">Luke Skywalker</span></h4>
-                </div>
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hiden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel"  role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hiden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            </div>
-        </div>
-    </div>
-<!--<script>
-    $(document).ready(function() {
-        $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=test&api_key=4a9f5581a9cdf20a699f540ac52a95c9&limit=10&format=json&callback=?", function(json) {
-            var html = '';
-            $.each(json.topartists.artist, function(i, item) {
-                html += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
-            });
-            $('#result').append(html);
-        });
-    });
-    </script>
-    <div id="result"></div>-->
 
 </body>
