@@ -236,7 +236,7 @@ $( document ).ready(function () {
         var removmusicnumber = removfavid.substr(removfavid.length - 1);
 
         console.log(removmusicnumber);
-        if (confirm("Deseja mesmo apagar esta música?")){d
+        if (confirm("Deseja mesmo apagar esta música?")){
             localStorage.removeItem("favnome" + removmusicnumber);
             localStorage.removeItem("favartista" + removmusicnumber);
             alert("Música removida dos favoritos");
