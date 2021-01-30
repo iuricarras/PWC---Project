@@ -22,7 +22,7 @@
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }*/
-  .CollapsButtons button {
+  .CollapsButtons a {
     position: relative;
     background-color: rgba(18, 4, 139, 0.877);
     border-radius: 8px;
@@ -40,14 +40,14 @@
     list-style-type: none;
   }
   
-  .CollapsButtons button:focus{
+  .CollapsButtons a:focus{
 
       outline: thin dotted;
     outline: 0px auto -webkit-focus-ring-color;
     outline-offset: 0px;
   }
   
-  .CollapsButtons button:after {
+  .CollapsButtons a:after {
     content: "";
     background: rgb(90, 127, 228);
     display: block;
@@ -60,7 +60,7 @@
     transition: all 0.8s
   }
   
-  .CollapsButtons button:active:after {
+  .CollapsButtons a:active:after {
     padding: 0;
     margin: 0;
     opacity: 1;
