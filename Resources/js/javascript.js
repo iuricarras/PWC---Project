@@ -25,7 +25,8 @@ $(function () {
 
         });
 
-	} else if ( $("body#pesquisa").length > 0 ){
+	} 
+    if ( $("body#pesquisa").length > 0 ){
 	
 	/*console.log('to qui');*/
 	var cloneMedia = $('.media').clone();
@@ -53,6 +54,7 @@ $(function () {
 					var liMedia=cloneMedia.clone();
                     $('#mdetalhes').attr("id","mdetalhes" + i);
                     $('#adetalhes').attr("id","adetalhes" + i);
+                    $('#favButton').attr("id","favButtonwdd" + i);
 					$('.title', liMedia).html(data.results.trackmatches.track[i].name);
 					$('.artist', liMedia).html(data.results.trackmatches.track[i].artist);
 					$('.media-list').append(liMedia);
@@ -140,6 +142,8 @@ $(function () {
             var resultadonomedetalhes = localStorage.nomedetalhes;
             var resultadoartistadetalhes = localStorage.artistadetalhes;
 
+            $(".detalhesmusica").text(resultadonomedetalhes);
+
             $.ajax({
                 type : 'POST',
                 url : 'http://ws.audioscrobbler.com/2.0/',
@@ -151,6 +155,7 @@ $(function () {
                 dataType : 'jsonp',
                 success : function(data) {
                 
+
                 console.log(data);
             }
         });
@@ -158,3 +163,66 @@ $(function () {
 
 }); 
 
+$( document ).ready(function () {
+    $(document).on("click", ".fav", function(event){
+            var favid = $(this).attr('id');
+            var musicnumber = favid.substr(favid.length - 1);
+
+            var favnome = document.getElementById("mdetalhes" + musicnumber);
+            var favartista = document.getElementById("adetalhes" + musicnumber);
+
+            console.log("localStorage.favnome0");
+            console.log(localStorage.favnome0);
+            
+            var slotmusica = verificacaofavoritos();
+
+
+            console.log("slotmusica - ");
+            console.log(slotmusica);
+
+            if(slotmusica < 10){
+                localStorage.setItem("favnome" + slotmusica, favnome.innerHTML);
+                localStorage.setItem("favartista" + slotmusica, favartista.innerHTML);
+            }
+            else{
+                alert("Número máximo de musicas atingido");
+            }
+            console.log(localStorage.favnome0);
+
+        });
+
+});  
+
+function verificacaofavoritos(){
+    for(var i = 0; i < 10; i++){
+        if(localStorage.getItem("favnome" + i) == null){
+            console.log("I");
+            console.log(i);
+            return i;
+    }
+}
+
+};
+$( document ).ready(function () {
+    var cloneMedia = $('.media').clone();
+    $('.media-list').html('');
+    for (var i = 0; i < 10 ; i++) {
+        if(localStorage.getItem("favnome" + i) == null){
+            break;
+        }
+        
+        var liMedia=cloneMedia.clone();
+        var displayfavnome = localStorage.getItem("favnome" + i);
+        var displayfavartista = localStorage.getItem("favartista" + i);
+
+        console.log("displayfavnome");
+        console.log(displayfavnome);
+        
+        $('#mdetalhes').attr("id","mdetalhes" + i);
+        $('#adetalhes').attr("id","adetalhes" + i);
+        $('.title', liMedia).text(displayfavnome);
+        $('.artist', liMedia).text(displayfavartista);
+        $('.media-list').append(liMedia);
+
+    }
+});   
