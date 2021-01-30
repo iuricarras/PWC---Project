@@ -54,7 +54,7 @@ $(function () {
 					var liMedia=cloneMedia.clone();
                     $('#mdetalhes').attr("id","mdetalhes" + i);
                     $('#adetalhes').attr("id","adetalhes" + i);
-                    $('#favButton').attr("id","favButtonwdd" + i);
+                    $('#favButton').attr("id","favButton" + i);
 					$('.title', liMedia).html(data.results.trackmatches.track[i].name);
 					$('.artist', liMedia).html(data.results.trackmatches.track[i].artist);
 					$('.media-list').append(liMedia);
@@ -208,8 +208,9 @@ $( document ).ready(function () {
     $('.media-list').html('');
     for (var i = 0; i < 10 ; i++) {
         if(localStorage.getItem("favnome" + i) == null){
-            break;
+           continue;
         }
+        else{
         
         var liMedia=cloneMedia.clone();
         var displayfavnome = localStorage.getItem("favnome" + i);
@@ -217,12 +218,32 @@ $( document ).ready(function () {
 
         console.log("displayfavnome");
         console.log(displayfavnome);
+        console.log(i);
         
-        $('#mdetalhes').attr("id","mdetalhes" + i);
-        $('#adetalhes').attr("id","adetalhes" + i);
         $('.title', liMedia).text(displayfavnome);
         $('.artist', liMedia).text(displayfavartista);
         $('.media-list').append(liMedia);
-
+        $('#removefavButton').attr("id","removefavButton" + i);
+        $('#mdetalhes').attr("id","mdetalhes" + i);
+        $('#adetalhes').attr("id","adetalhes" + i);
+        }
     }
+});   
+
+$( document ).ready(function () {
+     $(document).on("click", ".removefav", function(event){
+        var removfavid = $(this).attr('id');
+        var removmusicnumber = removfavid.substr(removfavid.length - 1);
+
+        console.log(removmusicnumber);
+        if (confirm("Deseja mesmo apagar esta música?")){d
+            localStorage.removeItem("favnome" + removmusicnumber);
+            localStorage.removeItem("favartista" + removmusicnumber);
+            alert("Música removida dos favoritos");
+            window.location.reload(true);   
+        }
+        else{   
+            alert("Okei");
+        }
+     });
 });   
