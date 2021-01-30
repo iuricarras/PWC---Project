@@ -1,5 +1,4 @@
 $(function () {
-
    if ( $("#formNome").length > 0 ){
         if (typeof(Storage) !== "undefined") {
             $("#nome").val(localStorage.nome)
@@ -63,6 +62,7 @@ $(function () {
 					console.log(data);
 					console.log(data.results.trackmatches.track[i].name);
 
+                    localStorage.removeItem("nome");
 				}
 			});
 		}
@@ -153,16 +153,38 @@ $(function () {
                         'track=' + resultadonomedetalhes + '&' +
                         'format=json',
                 dataType : 'jsonp',
-                success : function(data) {
+                success : function(music) {
                 
+                $.ajax({
+                    type : 'POST',
+                    url : 'http://ws.audioscrobbler.com/2.0/',
+                    data : 'method=artist.getinfo&' +
+                            'artist=' + resultadoartistadetalhes + '&' +
+                            'api_key=57ee3318536b23ee81d6b27e36997cde&' +
+                            'format=json',
+                    dataType : 'jsonp',
+                    success : function(artist) {
+                        console.log(music);
+                        console.log(artist);
 
-                console.log(data);
+                        var linkartist = artist.artist.image[3]["#text"];
+                        var linkalbum = music.track.album.image[3]["#text"];
+
+                        $('#nomeartista').html(music.track.artist.name);
+                        $('.fotoartista').attr("src", linkartist);
+                        $('#nomemusica').html(music.track.name);
+                        $('#nomealbum').html(music.track.album.title);
+                        $('#info').html(music.track.wiki.summary);
+                        $('.fotoalbum').attr("src", linkalbum);
+
+
             }
         });
         }
 
 }); 
-
+}
+}); 
 $( document ).ready(function () {
     $(document).on("click", ".fav", function(event){
             var favid = $(this).attr('id');
