@@ -1,0 +1,60 @@
+ 
+
+/*.fundo{
+  
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(Resources/images/fundo.png);
+  background-size: cover;
+  border: 2px solid darkgray;
+  color: #000; text-shadow: 1px 1px 0 black;
+}	*/
+
+
+.alberto img{
+	border: 5px solid #452981 ;	
+	filter: brightness(120%);
+	filter: drop-shadow(8px -7px 14px #452981)/*#7c17ab*/
+	}
+
+.iuri img{
+	border: 5px solid #452981; 
+	filter: brightness(120%);	
+	filter: drop-shadow(8px -7px 14px #452981)
+	}
+	
+.joao img{
+	border: 5px solid #452981; 
+	filter: brightness(120%);
+	filter: drop-shadow(8px -7px 14px #452981)
+	}
+
+.container-fluid {
+  	padding-top: 290px;
+  	height: 100%;
+	height: 100%;
+  	background-color:#706873;
+  	#efdbb2*/
+	}
+
+.container-fluid h1{
+	color: #452981;
+	font-size: 50px;
+	font-weight:bolder;
+	text-decoration:none !important
+	/*text-transform: capitalize;
+	text-decoration:none !important*/
+	}
+.container-fluid h1:hover{
+		text-shadow: 0 0 5px #7239b3, 0 0 3px #fff;
+		/*3px 3px 6px #ccc,
+		-6px -6px 3px #333,
+		-9px 9px 7px #555,
+		12px -12px 7px #444*/
+
+	}
+.container-fluid p{
+	font-size:18px;
+	color:#fff; 
+}
