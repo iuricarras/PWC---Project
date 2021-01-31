@@ -18,6 +18,15 @@
     <link rel="stylesheet" href="Resources/css/style.css">
     <link rel="stylesheet" href="Resources/css/style_ajuda.css">
     <link rel="stylesheet" href="Resources/css/style-navbar.css">
+
+    <style> 
+        body :focus
+        {
+            outline: thin dotted;
+            outline: 0px auto -webkit-focus-ring-color;
+            outline-offset: 0px;
+        }
+    </style>
      
     
 </head>
@@ -28,11 +37,11 @@
                   <div class="bg-dark p-4" style="background-color: #12048be0;"> 
                     <div class="CollapsButtons">
                         <div class="text-center">
-                                <a class="btn btn-primary" href="home.html" role="button">Home</a>
+                            <a class="btn btn-primary" href="home.html" role="button">Home</a>
 
-                                <a class="btn btn-primary" href="pesquisa.html" role="button">Pesquisa</a>
-
-                                <a class="btn btn-primary" href="favoritos.html" role="button">Favoritos</a>
+                            <a class="btn btn-primary" href="favoritos.html" role="button">Favoritos</a>
+                        
+                            <a class="btn btn-primary" href="ajuda.html" role="button">Ajuda</a>
                         </div>
                     </div>
                     
@@ -45,8 +54,11 @@
                   <div class="text-center">
                     <img src="Resources/images/iconR2D2.png" style="height: 12%; width: 12%; margin-right: right;">
                     <h1 style="color: white;">Ajuda</h1>
-                    <input type="text" placeholder="Search here you do..." style="width: 30%;">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <span id="error"></span>
+                    <form action="pesquisa.html" id="formNome" method="post">
+                        <input type="text" id="nome" name="pesquisa" placeholder="Search here you do..." style="width: 30%;">
+                        <button type="submit" id="btSearch"><i class="fa fa-search"></i></button>
+                    </form>                  
                   </div>
                 </nav>
               </div>
@@ -60,7 +72,7 @@
         <div class="jumbotron" style="padding-top: 200px;">
             <div class="text-center">
                 <h1></h1>      
-                <p>Play the Music - Projecto de PWC</p>      
+                <p><strong>Play the Music - Projecto de PWC</strong></p>      
             </div>
          </div>     
       </div>
@@ -109,6 +121,7 @@
         </div>   
     </div>
       
- </div>   
+ </div>
+ <script type="text/javascript" src="Resources/js/javascript.js"></script>   
 
 </body>
