@@ -13,7 +13,7 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!--<link rel="stylesheet" href="Resources/css/style.css">-->
+    <link rel="stylesheet" href="Resources/css/style.css">
     <link rel="stylesheet" href="Resources/css/style-navbar.css">
 
     <style> 
@@ -53,10 +53,10 @@
                     <img src="Resources/images/iconR2D2.png" style="height: 12%; width: 12%; margin-right: right;">
                     <h1 style="color: white;">Pesquisa</h1>
                     <span id="error"></span>
-                    <form action="pesquisa.html" id="formNome" method="post">
-                        <input type="text" id="nome" name="pesquisa" placeholder="Search here you do..." style="width: 30%;">
-                        <button type="submit" id="btSearch"><i class="fa fa-search"></i></button>
-                    </form>
+                        <form action="pesquisa.html" id="formNome" method="post">
+                            <input class="text-center" type="text" id="nome" name="pesquisa" placeholder="Search here you do..." style="width: 30%;" required class="form-control">
+                            <button type="submit" class="btn btn-primary" id="btSearch"><i class="fa fa-search"></i></button>
+                        </form>
                   </div>
                 </nav>
               </div>

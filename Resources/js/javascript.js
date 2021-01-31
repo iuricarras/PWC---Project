@@ -29,8 +29,11 @@ $(function () {
 	
 	/*console.log('to qui');*/
 	var cloneMedia = $('.media').clone();
-
-	var valuePesquisa = localStorage.nome;
+    if(localStorage.getItem("nome") != null){
+        localStorage.setItem("pesquisa", localStorage.nome);
+        localStorage.removeItem("nome");
+    }
+	var valuePesquisa = localStorage.pesquisa;
 	$('.panel-title').text('Resultado da Pesquisa - "'+ valuePesquisa+'"');
 
 	$('.media-list').html('');
@@ -62,7 +65,7 @@ $(function () {
 					console.log(data);
 					console.log(data.results.trackmatches.track[i].name);
 
-                    localStorage.removeItem("nome");
+ 
 				}
 			});
 		}
@@ -94,6 +97,7 @@ $(function () {
 
                     /*console.log('data');
                     console.log(data);*/
+                    localStorage.removeItem("nome");
             }
         }
     });
@@ -170,12 +174,15 @@ $(function () {
                         var linkartist = artist.artist.image[3]["#text"];
                         var linkalbum = music.track.album.image[3]["#text"];
 
+                        if (linkalbum === ""){
+                            linkalbum = "https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png";
+                        }
                         $('#nomeartista').html(music.track.artist.name);
                         $('.fotoartista').attr("src", linkartist);
                         $('#nomemusica').html(music.track.name);
                         $('#nomealbum').html(music.track.album.title);
-                        $('#info').html(music.track.wiki.summary);
                         $('.fotoalbum').attr("src", linkalbum);
+                        $('#info').html(music.track.wiki.summary);
 
 
             }
