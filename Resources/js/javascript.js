@@ -50,16 +50,17 @@ $(function () {
 
 
 				$.each(data.results.trackmatches, function(index, result){
-				for (var i = 0; i <= 10; i++) {
+				for (var i = 0; i <= 9; i++) {
 					
-
-					var liMedia=cloneMedia.clone();
-                    $('#mdetalhes').attr("id","mdetalhes" + i);
-                    $('#adetalhes').attr("id","adetalhes" + i);
-                    $('#favButton').attr("id","favButton" + i);
+                    var liMedia=cloneMedia.clone();
 					$('.title', liMedia).html(data.results.trackmatches.track[i].name);
 					$('.artist', liMedia).html(data.results.trackmatches.track[i].artist);
 					$('.media-list').append(liMedia);
+                    $('#mdetalhes').attr("id","mdetalhes" + i);
+                    $('#adetalhes').attr("id","adetalhes" + i);
+                    $('#favButton').attr("id","favButton" + i);
+                    $("#alertamusica").attr("id", "alertamusica" + i);
+                    $("#alertamusica" + i).hide();
 
 					console.log('data');
 					console.log(data);
@@ -86,33 +87,19 @@ $(function () {
              for (var i = 0; i <= 10; i++) {
                     
                     var liMedia;
-                    var link = data.tracks.track[0].image[0]["#text"];
 
-                    console.log(link);
-
-                    $('#musicimage', liMedia).attr("src", link);
-                    $('.title' + i, liMedia).html(data.tracks.track[i].name);
+                    $('.nomemusic' + i, liMedia).html(data.tracks.track[i].name);
                     $('.artist' + i, liMedia).html(data.tracks.track[i].artist.name);
                     $('.music'+ i).append(liMedia);
 
-                    /*console.log('data');
-                    console.log(data);*/
-                    localStorage.removeItem("nome");
             }
+             localStorage.removeItem("nome");
         }
     });
 
 })
 
  $( document ).ready(function () {
-        console.log("Work...Please");
-        /*if (typeof(Storage) !== "undefined") {
-            $("#mdetalhes").val(localStorage.detalhes)
-        } else {
-        // Acção ou aviso para o não suporte de persistência de dados
-            $("#error").text( "Not valid!" ).show().fadeOut( 1000 );
-            event.preventDefault();
-        }*/
         $(document).on("click", ".title", function(event){
             
             console.log("hello");
@@ -132,7 +119,6 @@ $(function () {
             return;
             
             } else {
-            // Acção ou aviso para o não suporte de persistência de dadosd
                 $( "#error" ).text( "Not valid!" ).show().fadeOut( 1000 );
                 console.log("Why am i here?");
                 event.preventDefault();
@@ -212,6 +198,10 @@ $( document ).ready(function () {
             if(slotmusica < 10){
                 localStorage.setItem("favnome" + slotmusica, favnome.innerHTML);
                 localStorage.setItem("favartista" + slotmusica, favartista.innerHTML);
+                $("#alertamusica" + musicnumber).show(300);
+                setTimeout(function(){
+                $("#alertamusica" + musicnumber).hide(300);  
+                }, 3000);
             }
             else{
                 alert("Número máximo de musicas atingido");
