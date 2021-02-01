@@ -1,5 +1,0 @@
-1 - A pesquisa inicia-se mesmo com a variável em null ou undefined
-
-2 - Ao retroceder da pagina detalhes, notei que a pesquisa independentemente do que tenhamos pesquisado anteriormente 
-é substituida pela pesquisa "Undefined" - Solução - A barra pesquisa não deve ser limpa nas páginas Detalhes e Pesquisa,
-visto que esta páginas apenas tem acesso interno e não externo
