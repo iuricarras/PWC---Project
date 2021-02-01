@@ -169,6 +169,7 @@ $(function () {
                         $('#nomealbum').html(music.track.album.title);
                         $('.fotoalbum').attr("src", linkalbum);
                         $('#info').html(music.track.wiki.summary);
+                        $("#alertamusica").hide();
 
 
             }
@@ -211,6 +212,29 @@ $( document ).ready(function () {
         });
 
 });  
+
+$( document ).ready(function () {
+     $(document).on("click", "#favButton", function(event){
+
+            var favnome = localStorage.nomedetalhes;
+            var favartista = localStorage.artistadetalhes;
+
+
+            var slotmusica = verificacaofavoritos();
+
+            if(slotmusica < 10){
+                localStorage.setItem("favnome" + slotmusica, favnome);
+                localStorage.setItem("favartista" + slotmusica, favartista);
+                $("#alertamusica").show(300);
+                setTimeout(function(){
+                $("#alertamusica").hide(300);  
+                }, 3000);
+            }
+            else{
+                alert("Número máximo de musicas atingido");
+            }
+    });
+});
 
 function verificacaofavoritos(){
     for(var i = 0; i < 10; i++){
